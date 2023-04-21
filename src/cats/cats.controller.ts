@@ -3,19 +3,6 @@ import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
 
-// @Controller('cats')
-// export class CatsController {
-//   @Post()
-//   create(): string {
-//     return 'This action adds a new cat';
-//   }
-
-//   @Get()
-//   findAll(): string {
-//     return 'This action returns all cats';
-//   }
-// }
-
 @Controller('cats')
 export class CatsController {
   constructor(private catsService: CatsService) {}
