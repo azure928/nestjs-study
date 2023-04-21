@@ -9,9 +9,7 @@ import {
 import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
-import { LoggingInterceptor } from 'src/common/interceptors/logging.interceptor';
 
-@UseInterceptors(LoggingInterceptor)
 @Controller('cats')
 export class CatsController {
   constructor(private catsService: CatsService) {}
