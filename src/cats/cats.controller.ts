@@ -1,8 +1,17 @@
-import { Controller, Get, Post, Body, ValidationPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  ValidationPipe,
+  UseInterceptors,
+} from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
+import { LoggingInterceptor } from 'src/common/interceptors/logging.interceptor';
 
+@UseInterceptors(LoggingInterceptor)
 @Controller('cats')
 export class CatsController {
   constructor(private catsService: CatsService) {}
