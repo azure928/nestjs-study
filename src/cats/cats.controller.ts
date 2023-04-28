@@ -12,7 +12,6 @@ import { Cat } from './interfaces/cat.interface';
 import { AuthGuard } from 'src/auth/auth.guard';
 
 @Controller('cats')
-@UseGuards(AuthGuard)
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
