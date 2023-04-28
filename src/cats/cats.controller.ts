@@ -4,13 +4,15 @@ import {
   Post,
   Body,
   ValidationPipe,
-  UseInterceptors,
+  UseGuards,
 } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @Controller('cats')
+@UseGuards(AuthGuard)
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
