@@ -31,12 +31,9 @@ export class HttpExceptionFilter implements ExceptionFilter<HttpException> {
     this.logger.log(log);
 
     res.status(statusCode).json({
-      // statusCode,
       timestamp: new Date().toISOString(),
       path: req.url,
       response: response,
     });
-
-    // res.status((exception as HttpException).getStatus()).json(response);
   }
 }
